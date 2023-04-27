@@ -1,0 +1,63 @@
+{
+  "login_panel": {
+    "header": "Sign In",
+    "User_name": {
+      "label": "User Name",
+      "error_message": {
+        "invalid": "Invalid user name",
+        "required": "User name required",
+        "short": "Too short user name",
+        "long": "Too long user name"
+      }
+    },
+    "password": {
+      "label": "Password",
+      "error_message": {
+        "invalid": "Invalid password",
+        "required": "Password required",
+        "short": "Too short password",
+        "long": "Too long password"
+      }
+    },
+    "login_button": {
+      "label": "Sign In"
+    },
+    "register_button": {
+      "label": "Sign Up"
+    }
+  },
+  "register_panel": {
+    "header": "Sign Up",
+    "User_name": {
+      "label": "User Name",
+      "error_message": {
+        "invalid": "Invalid user name",
+        "required": "User name required",
+        "short": "Too short user name",
+        "long": "Too long user name"
+      }
+    },
+    "password": {
+      "label": "Password",
+      "error_message": {
+        "invalid": "Invalid password",
+        "required": "Password required",
+        "short": "Too short password",
+        "long": "Too long password"
+      }
+    },
+    "confirm_password": {
+      "label": "Confirm Password",
+      "error_message": {
+        "invalid": "Invalid confirm password",
+        "required": "Confirm password required",
+        "short": "Too short confirm password",
+        "long": "Too long confirm password",
+        "match": "password and confirm password not same"
+      }
+    },
+    "register_button": {
+      "label": "Sign Up"
+    }
+  }
+}
