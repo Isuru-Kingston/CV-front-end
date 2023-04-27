@@ -1,0 +1,37 @@
+{
+  "login_panel": {
+    "header": "Sign In",
+    "User_name": {
+      "label": "User Name",
+      "error_message": "Invalid user name"
+    },
+    "password": {
+      "label": "Password",
+      "error_message": "Invalid Password"
+    },
+    "login_button": {
+      "label": "Sign In"
+    },
+    "register_button": {
+      "label": "Sign Up"
+    }
+  },
+  "register_panel": {
+    "header": "Sign Up",
+    "User_name": {
+      "label": "User Name",
+      "error_message": "Invalid user name"
+    },
+    "password": {
+      "label": "Password",
+      "error_message": "Invalid Password"
+    },
+    "confirm_password": {
+      "label": "Confirm Password",
+      "error_message": "Invalid Confirm Password"
+    },
+    "register_button": {
+      "label": "Sign Up"
+    }
+  }
+}
