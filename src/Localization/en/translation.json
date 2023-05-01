@@ -59,5 +59,240 @@
     "register_button": {
       "label": "Sign Up"
     }
+  },
+  "profile_edit_panel": {
+    "header": "Add Your CV Details",
+    "personal_details_header": "Personal Details",
+    "work_experience_header": "Work Experience",
+    "academic_qualification_header": "Academic Qualifications",
+    "professional_qualification_header": "Professional Qualifications",
+    "submit_button_label": "Save",
+    "view_profle_button_label": "View Profile",
+    "image_picker_label": "Drag and drop Profile Image",
+    "first_name": {
+      "label": "First Name",
+      "error_message": {
+        "invalid": "Invalid first name",
+        "required": "First name required",
+        "short": "Too short first name",
+        "long": "Too long first name"
+      }
+    },
+    "middle_name": {
+      "label": "Middle Name",
+      "error_message": {
+        "invalid": "Invalid middle name",
+        "required": "Middle name required",
+        "short": "Too short middle name",
+        "long": "Too long middle name"
+      }
+    },
+    "last_name": {
+      "label": "Last Name",
+      "error_message": {
+        "invalid": "Invalid last name",
+        "required": "Last name required",
+        "short": "Too short last name",
+        "long": "Too long last name"
+      }
+    },
+    "birth_day": {
+      "label": "Birth Day",
+      "error_message": {
+        "invalid": "Invalid Birth Day",
+        "required": "Birth Day required"
+      }
+    },
+    "gender": {
+      "label": "Gender",
+      "error_message": {
+        "invalid": "Invalid gender",
+        "required": "Gender required"
+      }
+    },
+    "mobile_number": {
+      "label": "Mobile Number",
+      "placeholder": "77xxxxxxx",
+      "error_message": {
+        "invalid": "Invalid mobile number",
+        "required": "Mobile number required",
+        "short": "Too short mobile number",
+        "long": "Too long mobile number"
+      }
+    },
+    "email": {
+      "label": "email",
+      "error_message": {
+        "invalid": "Invalid email",
+        "required": "Email required"
+      }
+    },
+    "address": {
+      "label": "Address",
+      "error_message": {
+        "invalid": "Invalid address",
+        "required": "Address required",
+        "short": "Too short address",
+        "long": "Too long address"
+      }
+    },
+    "industry": {
+      "label": "Industry",
+      "error_message": {
+        "invalid": "Invalid industry",
+        "required": "Industry required"
+      }
+    },
+    "work_experience": {
+      "organization_name": {
+        "label": "Organization Name",
+        "error_message": {
+          "invalid": "Invalid organization Name",
+          "required": "Organization Name required",
+          "short": "Too short organization Name",
+          "long": "Too long organization Name"
+        }
+      },
+      "position": {
+        "label": "Position",
+        "error_message": {
+          "invalid": "Invalid position",
+          "required": "position required",
+          "short": "Too short position",
+          "long": "Too long position"
+        }
+      },
+      "from_date": {
+        "label": "From",
+        "error_message": {
+          "invalid": "Invalid start date",
+          "required": "Start date required"
+        }
+      },
+      "to_date": {
+        "label": "To",
+        "error_message": {
+          "invalid": "Invalid end date",
+          "required": "End date required"
+        }
+      }
+    },
+    "academic_qualification": {
+      "institute_name": {
+        "label": "Institute Name",
+        "error_message": {
+          "invalid": "Invalid institute Name",
+          "required": "Institute Name required",
+          "short": "Too short institute Name",
+          "long": "Too long institute Name"
+        }
+      },
+      "certificate_name": {
+        "label": "Certificate Name",
+        "error_message": {
+          "invalid": "Invalid certificate name",
+          "required": "Certificate name required",
+          "short": "Too short certificate name",
+          "long": "Too long certificate name"
+        }
+      },
+      "certificate_type": {
+        "label": "Certificate Type",
+        "error_message": {
+          "invalid": "Invalid certificate type",
+          "required": "Certificate type required"
+        }
+      },
+      "from_date": {
+        "label": "From",
+        "error_message": {
+          "invalid": "Invalid start date",
+          "required": "Start date required"
+        }
+      },
+      "to_date": {
+        "label": "To",
+        "error_message": {
+          "invalid": "Invalid end date",
+          "required": "End date required"
+        }
+      }
+    },
+    "professional_qualification": {
+      "institute_name": {
+        "label": "Institute Name",
+        "error_message": {
+          "invalid": "Invalid institute Name",
+          "required": "Institute Name required",
+          "short": "Too short institute Name",
+          "long": "Too long institute Name"
+        }
+      },
+      "certificate_name": {
+        "label": "Certificate Name",
+        "error_message": {
+          "invalid": "Invalid certificate name",
+          "required": "Certificate name required",
+          "short": "Too short certificate name",
+          "long": "Too long certificate name"
+        }
+      },
+      "certificate_type": {
+        "label": "Certificate Type",
+        "error_message": {
+          "invalid": "Invalid certificate type",
+          "required": "Certificate type required"
+        }
+      },
+      "from_date": {
+        "label": "From",
+        "error_message": {
+          "invalid": "Invalid start date",
+          "required": "Start date required"
+        }
+      },
+      "to_date": {
+        "label": "To",
+        "error_message": {
+          "invalid": "Invalid end date",
+          "required": "End date required"
+        }
+      }
+    }
+  },
+  "profile_view_panel": {
+    "profile_header": "Profile",
+    "first_name": "First Name",
+    "middle_name": "Middle Name",
+    "last_name": "Last Name",
+    "birth_day": "Birth Day",
+    "gender": "Gender",
+    "mobile_number": "Mobile Number",
+    "email": "Email",
+    "address": "Address",
+    "industry": "Industry",
+    "work_experience": {
+      "header": "Work Experience",
+      "organization_name": "Organization Name",
+      "position": "Position",
+      "from_date": "From",
+      "to_date": "To"
+    },
+    "academic_qualification": {
+      "header": "Academic Qualifications",
+      "institute_name": "Institute Name",
+      "certificate_name": "Certificate Name",
+      "certificate_type": "Certificate Type",
+      "from_date": "From",
+      "to_date": "To"
+    },
+    "professional_qualification": {
+      "header": "Professional Qualifications",
+      "institute_name": "Institute Name",
+      "certificate_name": "Certificate Name",
+      "certificate_type": "Certificate Type",
+      "from_date": "From",
+      "to_date": "To"
+    }
   }
 }

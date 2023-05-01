@@ -1,7 +1,12 @@
 import React from "react";
+import ProfileEdit from "../../Features/ProfileEdit";
 
 function SeekerProfile() {
-  return <div>SeekerProfile</div>;
+  return (
+    <div>
+      <ProfileEdit />
+    </div>
+  );
 }
 
 export default SeekerProfile;
