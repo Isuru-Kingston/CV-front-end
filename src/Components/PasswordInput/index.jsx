@@ -1,7 +1,7 @@
 import React from "react";
 import { Password } from "primereact/password";
 
-const PasswordInput = ({ label, errormsg, isError, value, setValue }) => {
+const PasswordInput = ({ label, errormsg, isError, value, onChangeValue }) => {
   return (
     <div className="flex flex-column gap-2">
       <label htmlFor="password-input">{label}</label>
@@ -10,9 +10,7 @@ const PasswordInput = ({ label, errormsg, isError, value, setValue }) => {
         id="password-input"
         aria-describedby="password-input-help"
         value={value}
-        onChange={(e) => {
-          setValue(e.target.value);
-        }}
+        onChange={onChangeValue}
         className={isError ? "p-invalid" : ""}
         toggleMask
       />

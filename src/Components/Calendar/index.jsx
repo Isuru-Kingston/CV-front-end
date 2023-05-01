@@ -1,7 +1,7 @@
 import React from "react";
-import { InputText } from "primereact/inputtext";
+import { Calendar as PRCalendar } from "primereact/calendar";
 
-const TextInput = ({
+const Calendar = ({
   label,
   errormsg,
   isError,
@@ -10,19 +10,19 @@ const TextInput = ({
   ...otherProps
 }) => {
   return (
-    <div className="flex flex-column gap-2">
+    <div className="flex flex-column gap-2" data-testid="calendar">
       <label htmlFor="text-input">{label}</label>
-      <InputText
-        id="text-input"
-        aria-describedby="text-input-help"
+      <PRCalendar
+        id="calendar"
+        aria-describedby="calendar-help"
         value={value}
         onChange={onChangeValue}
         className={isError ? "p-invalid" : ""}
         {...otherProps}
       />
-      {isError ? <small id="text-input-help">{errormsg}</small> : null}
+      {isError ? <small id="calendar-help">{errormsg}</small> : null}
     </div>
   );
 };
 
-export default TextInput;
+export default Calendar;
