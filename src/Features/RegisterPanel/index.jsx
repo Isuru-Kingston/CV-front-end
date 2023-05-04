@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 import {
   selectuserRegistration,
@@ -14,6 +15,7 @@ import TextInput from "../../Components/TextInput";
 import PasswordInput from "../../Components/PasswordInput";
 import Button from "../../Components/Button";
 import Toast from "../../Components/Toast";
+import Spinner from "../../Components/Spinner";
 
 const RegisterPanel = () => {
   const { t: translate } = useTranslation();
@@ -50,14 +52,11 @@ const RegisterPanel = () => {
       ),
   });
 
-  const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
-
   const toast = useRef(null);
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    console.log(user);
-  }, [user]);
+  const user = useSelector((state) => state.user.userRegistration);
 
   const onCreateUser = () => {
     const data = {
@@ -107,7 +106,7 @@ const RegisterPanel = () => {
     <div className="flex justify-content-around pt-4 pb-4">
       <form
         onSubmit={formik.handleSubmit}
-        className="flex flex-column gap-4 w-4 p-4 border-2 border-blue-500 border-round-lg"
+        className="flex flex-column gap-4 w-4 p-4 shadow-8 border-round-lg"
       >
         <div className="text-2xl font-bold">
           {translate("register_panel.header")}
@@ -166,10 +165,19 @@ const RegisterPanel = () => {
           errormsg={formik.errors["ConfirmPassword"]}
           isError={formik.errors["ConfirmPassword"]}
         />
+        {user.status == "loading" && (
+          <div className="flex flex-column w-full">
+            <Spinner />
+          </div>
+        )}
         <div className="flex flex-column gap-2 w-full p-3">
           <Button
             type="submit"
             label={translate("register_panel.register_button.label")}
+          />
+          <Button
+            onClick={() => navigate("/login")}
+            label={translate("register_panel.login_button.label")}
           />
         </div>
       </form>

@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from "react";
-import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 import { selectuser, userLogin } from "../../Store/Slices/userSlice";
 
@@ -11,6 +11,7 @@ import TextInput from "../../Components/TextInput";
 import PasswordInput from "../../Components/PasswordInput";
 import Button from "../../Components/Button";
 import Toast from "../../Components/Toast";
+import Spinner from "../../Components/Spinner";
 
 const LoginPanel = () => {
   const { t: translate } = useTranslation();
@@ -28,12 +29,8 @@ const LoginPanel = () => {
 
   const user = useSelector((state) => state.user.userLogin);
   const dispatch = useDispatch();
-
   const toast = useRef(null);
-
-  useEffect(() => {
-    console.log(user);
-  }, [user]);
+  const navigate = useNavigate();
 
   const onLoginUser = () => {
     const data = {
@@ -71,10 +68,10 @@ const LoginPanel = () => {
     },
   });
   return (
-    <div className="flex justify-content-around pt-4">
+    <div className="flex justify-content-around align-items-center pt-4">
       <form
         onSubmit={formik.handleSubmit}
-        className="flex flex-column gap-4 w-4 p-4 border-2 border-blue-500 border-round-lg"
+        className="flex flex-column gap-4 w-4 p-4 border-round-lg shadow-8"
       >
         <div className="text-2xl font-bold">
           {translate("login_panel.header")}
@@ -97,12 +94,21 @@ const LoginPanel = () => {
           errormsg={formik.errors["password"]}
           isError={formik.errors["password"]}
         />
+        {user.status == "loading" && (
+          <div className="flex flex-column w-full">
+            <Spinner />
+          </div>
+        )}
+
         <div className="flex flex-column gap-2 w-full p-4">
           <Button
             label={translate("login_panel.login_button.label")}
             type="submit"
           />
-          <Button label={translate("login_panel.register_button.label")} />
+          <Button
+            onClick={() => navigate("/register")}
+            label={translate("login_panel.register_button.label")}
+          />
         </div>
       </form>
       <Toast ref={toast} />

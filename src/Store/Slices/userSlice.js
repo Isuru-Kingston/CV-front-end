@@ -46,7 +46,17 @@ export const userLogin = createAsyncThunk("user/login", async (request) => {
 export const userSlice = createSlice({
   name: "user",
   initialState,
-  reducers: {},
+  reducers: {
+    userLogout: (state) => {
+      state.userLogin = {
+        status: "idle",
+        token: "",
+        userName: "",
+        userId: "",
+        role: "",
+      };
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(userRegistration.pending, (state) => {
@@ -123,6 +133,7 @@ export const userSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
+export const { userLogout } = userSlice.actions;
 export const selectuserRegistration = (state) => state.userRegistration;
 export const selectuser = (state) => state.userLogin;
 

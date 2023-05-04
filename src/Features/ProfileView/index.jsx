@@ -93,7 +93,7 @@ function ProfileView({ data, ...otherProps }) {
       </div>
       {data.experiences && data.experiences.length > 0
         ? data.experiences.map((experience, index) => (
-            <div className="grid mt-2 border-round-md shadow-4">
+            <div className="grid mt-2 border-round-md shadow-1">
               <div className="col">
                 <Title
                   Title={translate(
@@ -140,7 +140,7 @@ function ProfileView({ data, ...otherProps }) {
       </div>
       {data.academicQualifications && data.academicQualifications.length > 0
         ? data.academicQualifications.map((academicQualification, index) => (
-            <div className="grid mt-2 border-round-md shadow-4">
+            <div className="grid mt-2 border-round-md shadow-1">
               <div className="col">
                 <Title
                   Title={translate(
@@ -196,7 +196,7 @@ function ProfileView({ data, ...otherProps }) {
       data.professionalQualifications.length > 0
         ? data.professionalQualifications.map(
             (professionalQualification, index) => (
-              <div className="grid mt-2 border-round-md shadow-4">
+              <div className="grid mt-2 border-round-md shadow-1">
                 <div className="col">
                   <Title
                     Title={translate(

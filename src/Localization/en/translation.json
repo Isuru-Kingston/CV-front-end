@@ -1,4 +1,10 @@
 {
+  "header": {
+    "alert": {
+      "header": "Confirmation",
+      "message": "Are you sure you want to sign out?"
+    }
+  },
   "login_panel": {
     "header": "Sign In",
     "error_message": "Invalid user name or password !",
@@ -87,6 +93,9 @@
     },
     "register_button": {
       "label": "Sign Up"
+    },
+    "login_button": {
+      "label": "Sign In"
     }
   },
   "profile_edit_panel": {
