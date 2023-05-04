@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { useSelector, useDispatch } from "react-redux";
+
+import { selectuser, userLogin } from "../../Store/Slices/userSlice";
 
 import TextInput from "../../Components/TextInput";
 import PasswordInput from "../../Components/PasswordInput";
 import Button from "../../Components/Button";
+import Toast from "../../Components/Toast";
 
 const LoginPanel = () => {
-  const [userName, setUserName] = useState(null);
-
   const { t: translate } = useTranslation();
 
   const LoginSchema = Yup.object().shape({
@@ -24,8 +26,37 @@ const LoginPanel = () => {
       .required(translate("login_panel.password.error_message.required")),
   });
 
-  const show = () => {
-    console.log(formik.values);
+  const user = useSelector((state) => state.user.userLogin);
+  const dispatch = useDispatch();
+
+  const toast = useRef(null);
+
+  useEffect(() => {
+    console.log(user);
+  }, [user]);
+
+  const onLoginUser = () => {
+    const data = {
+      username: formik.values.userName,
+      password: formik.values.password,
+    };
+    dispatch(
+      userLogin({
+        data,
+        showToast,
+        toastMsg: {
+          success: translate("login_panel.success_message"),
+          error: translate("login_panel.error_message"),
+        },
+      })
+    );
+  };
+  const showToast = (severity, summary, detail) => {
+    toast.current.show({
+      severity,
+      summary,
+      detail,
+    });
   };
 
   const formik = useFormik({
@@ -35,7 +66,7 @@ const LoginPanel = () => {
     },
     validationSchema: LoginSchema,
     onSubmit: (data) => {
-      data && show(data);
+      data && onLoginUser();
       formik.resetForm();
     },
   });
@@ -74,6 +105,7 @@ const LoginPanel = () => {
           <Button label={translate("login_panel.register_button.label")} />
         </div>
       </form>
+      <Toast ref={toast} />
     </div>
   );
 };
