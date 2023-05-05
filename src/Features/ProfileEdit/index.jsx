@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { useFormik, FieldArray } from "formik";
 import * as Yup from "yup";
+import { useSelector, useDispatch } from "react-redux";
+
+import { getSeeker, selectSeeker } from "../../Store/Slices/seekerSlice";
 
 import FileUpload from "../../Components/FileUpload";
 import TextInput from "../../Components/TextInput";
@@ -12,6 +15,7 @@ import { industry_options } from "../../Data/Industry";
 import { certificate_options } from "../../Data/Certificate";
 import Dropdown from "../../Components/Dropdown";
 import Button from "../../Components/Button";
+import Toast from "../../Components/Toast";
 import ProfileView from "../ProfileView";
 
 function ProfileEdit() {
@@ -249,6 +253,36 @@ function ProfileEdit() {
   });
 
   const [visible, setVisible] = useState(false);
+  const user = useSelector((state) => state.seeker.seeker);
+  const loginUser = useSelector((state) => state.user.userLogin);
+
+  const toast = useRef(null);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (loginUser.token && loginUser.userId)
+      console.log("rtghr4tht", loginUser.token);
+    dispatch(
+      getSeeker({
+        token: loginUser.token,
+        userId: loginUser.userId,
+        showToast,
+        toastMsg: {
+          success: translate("profile_edit_panel.get_success_message"),
+          error: translate("profile_edit_panel.get_error_message"),
+        },
+      })
+    );
+  }, [loginUser]);
+
+  const showToast = (severity, summary, detail) => {
+    toast.current.show({
+      severity,
+      summary,
+      detail,
+    });
+  };
 
   const show = () => {
     console.log(JSON.stringify(formik.values));
@@ -1006,6 +1040,7 @@ function ProfileEdit() {
           <div className="col-1"></div>
         </div>
       </form>
+      <Toast ref={toast} />
     </div>
   );
 }

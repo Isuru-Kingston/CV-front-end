@@ -99,6 +99,8 @@
     }
   },
   "profile_edit_panel": {
+    "get_error_message": "Something wrong !",
+    "get_success_message": "User fetched successfully !",
     "header": "Add Your CV Details",
     "personal_details_header": "Personal Details",
     "work_experience_header": "Work Experience",
