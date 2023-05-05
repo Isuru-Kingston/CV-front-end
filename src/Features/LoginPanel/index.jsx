@@ -1,16 +1,19 @@
-import React from "react";
-import { useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+
+import { selectuser, userLogin } from "../../Store/Slices/userSlice";
 
 import TextInput from "../../Components/TextInput";
 import PasswordInput from "../../Components/PasswordInput";
 import Button from "../../Components/Button";
+import Toast from "../../Components/Toast";
+import Spinner from "../../Components/Spinner";
 
 const LoginPanel = () => {
-  const [userName, setUserName] = useState(null);
-
   const { t: translate } = useTranslation();
 
   const LoginSchema = Yup.object().shape({
@@ -24,8 +27,33 @@ const LoginPanel = () => {
       .required(translate("login_panel.password.error_message.required")),
   });
 
-  const show = () => {
-    console.log(formik.values);
+  const user = useSelector((state) => state.user.userLogin);
+  const dispatch = useDispatch();
+  const toast = useRef(null);
+  const navigate = useNavigate();
+
+  const onLoginUser = () => {
+    const data = {
+      username: formik.values.userName,
+      password: formik.values.password,
+    };
+    dispatch(
+      userLogin({
+        data,
+        showToast,
+        toastMsg: {
+          success: translate("login_panel.success_message"),
+          error: translate("login_panel.error_message"),
+        },
+      })
+    );
+  };
+  const showToast = (severity, summary, detail) => {
+    toast.current.show({
+      severity,
+      summary,
+      detail,
+    });
   };
 
   const formik = useFormik({
@@ -35,15 +63,15 @@ const LoginPanel = () => {
     },
     validationSchema: LoginSchema,
     onSubmit: (data) => {
-      data && show(data);
+      data && onLoginUser();
       formik.resetForm();
     },
   });
   return (
-    <div className="flex justify-content-around pt-4">
+    <div className="flex justify-content-around align-items-center pt-4">
       <form
         onSubmit={formik.handleSubmit}
-        className="flex flex-column gap-4 w-4 p-4 border-2 border-blue-500 border-round-lg"
+        className="flex flex-column gap-4 w-4 p-4 border-round-lg shadow-8"
       >
         <div className="text-2xl font-bold">
           {translate("login_panel.header")}
@@ -66,14 +94,24 @@ const LoginPanel = () => {
           errormsg={formik.errors["password"]}
           isError={formik.errors["password"]}
         />
+        {user.status == "loading" && (
+          <div className="flex flex-column w-full">
+            <Spinner />
+          </div>
+        )}
+
         <div className="flex flex-column gap-2 w-full p-4">
           <Button
             label={translate("login_panel.login_button.label")}
             type="submit"
           />
-          <Button label={translate("login_panel.register_button.label")} />
+          <Button
+            onClick={() => navigate("/register")}
+            label={translate("login_panel.register_button.label")}
+          />
         </div>
       </form>
+      <Toast ref={toast} />
     </div>
   );
 };

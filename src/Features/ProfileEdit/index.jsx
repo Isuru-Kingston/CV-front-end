@@ -386,7 +386,7 @@ function ProfileEdit() {
       />
       <form
         onSubmit={formik.handleSubmit}
-        className="flex flex-column gap-4 w-full p-4 m-4 border-2 border-blue-500 border-round-lg"
+        className="flex flex-column gap-4 w-full p-4 m-4 shadow-3 border-round-lg"
       >
         <div className="grid flex justify-content-between flex-wrap card-container green-container">
           <div className="col-10">

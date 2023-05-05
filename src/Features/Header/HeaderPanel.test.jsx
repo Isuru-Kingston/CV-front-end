@@ -4,14 +4,14 @@ import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 
 import { store } from "../../Store/store";
-import LoginPanel from "../LoginPanel";
+import HeaderPanel from "../Header";
 
 describe("LoginPanel", () => {
   test("renders LoginPanel component", () => {
     render(
       <BrowserRouter>
         <Provider store={store}>
-          <LoginPanel />
+          <HeaderPanel />
         </Provider>
       </BrowserRouter>
     );

@@ -1,6 +1,14 @@
 {
+  "header": {
+    "alert": {
+      "header": "Confirmation",
+      "message": "Are you sure you want to sign out?"
+    }
+  },
   "login_panel": {
     "header": "Sign In",
+    "error_message": "Invalid user name or password !",
+    "success_message": "User login successfully !",
     "User_name": {
       "label": "User Name",
       "error_message": {
@@ -28,6 +36,8 @@
   },
   "register_panel": {
     "header": "Sign Up",
+    "error_message": "Something wrong !",
+    "success_message": "User created successfully !",
     "User_name": {
       "label": "User Name",
       "error_message": {
@@ -35,6 +45,31 @@
         "required": "User name required",
         "short": "Too short user name",
         "long": "Too long user name"
+      }
+    },
+    "email": {
+      "label": "email",
+      "error_message": {
+        "invalid": "Invalid email",
+        "required": "Email required"
+      }
+    },
+    "first_name": {
+      "label": "First Name",
+      "error_message": {
+        "invalid": "Invalid first name",
+        "required": "First name required",
+        "short": "Too short first name",
+        "long": "Too long first name"
+      }
+    },
+    "last_name": {
+      "label": "Last Name",
+      "error_message": {
+        "invalid": "Invalid last name",
+        "required": "Last name required",
+        "short": "Too short last name",
+        "long": "Too long last name"
       }
     },
     "password": {
@@ -58,6 +93,9 @@
     },
     "register_button": {
       "label": "Sign Up"
+    },
+    "login_button": {
+      "label": "Sign In"
     }
   },
   "profile_edit_panel": {
@@ -294,5 +332,9 @@
       "from_date": "From",
       "to_date": "To"
     }
+  },
+  "filter_panel": {
+    "filter_header": "Filters",
+    "candidate_header": "Candidates"
   }
 }
