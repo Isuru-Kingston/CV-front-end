@@ -4,14 +4,14 @@ import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 
 import { store } from "../../Store/store";
-import ProfileEdit from "../ProfileEdit";
+import FilterPanel from "../FilterPanel";
 
-describe("ProfileEdit", () => {
-  test("renders ProfileEdit component", () => {
+describe("Profile", () => {
+  test("renders Profile component", () => {
     render(
       <BrowserRouter>
         <Provider store={store}>
-          <ProfileEdit />
+          <FilterPanel />
         </Provider>
       </BrowserRouter>
     );

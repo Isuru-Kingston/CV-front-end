@@ -15,7 +15,7 @@ const AuthNavigation = () => {
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      {user?.role == "JOB_AGENT" ? (
+      {user?.role == "AGENT" ? (
         <Routes>
           <Route path="/agent-profile" element={<AgentProfile />} />
           <Route path="*" element={<Navigate to="/agent-profile" />} />
