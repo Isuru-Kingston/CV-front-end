@@ -101,6 +101,8 @@
   "profile_edit_panel": {
     "get_error_message": "Something wrong !",
     "get_success_message": "User fetched successfully !",
+    "update_error_message": "Something wrong !",
+    "update_success_message": "User updated successfully !",
     "header": "Add Your CV Details",
     "personal_details_header": "Personal Details",
     "work_experience_header": "Work Experience",
@@ -108,7 +110,16 @@
     "professional_qualification_header": "Professional Qualifications",
     "submit_button_label": "Save",
     "view_profle_button_label": "View Profile",
-    "image_picker_label": "Drag and drop Profile Image",
+    "image_picker_label": "Select Profile Image",
+    "profile_image": {
+      "label": "Select Profile Image",
+      "error_message": {
+        "invalid": "Invalid profile",
+        "required": "Profile image required",
+        "success": "Profile image uploaded successfully !",
+        "error": "Profile image upload faild !"
+      }
+    },
     "first_name": {
       "label": "First Name",
       "error_message": {
@@ -181,6 +192,43 @@
       "error_message": {
         "invalid": "Invalid industry",
         "required": "Industry required"
+      }
+    },
+    "about": {
+      "label": "About",
+      "error_message": {
+        "invalid": "Invalid about",
+        "required": "About required",
+        "short": "Too short about",
+        "long": "Too long about"
+      }
+    },
+    "years_of_experience": {
+      "label": "Years Of Experience",
+      "error_message": {
+        "invalid": "Invalid Year",
+        "required": "Year required"
+      }
+    },
+    "education_level": {
+      "label": "Education Level",
+      "error_message": {
+        "invalid": "Invalid education level",
+        "required": "Education level required"
+      }
+    },
+    "gcse_passes": {
+      "label": "Number Of Gcse Passes",
+      "error_message": {
+        "invalid": "Invalid Number",
+        "required": "Number required"
+      }
+    },
+    "skills": {
+      "label": "Skills",
+      "error_message": {
+        "invalid": "Invalid skill",
+        "required": "Skills required"
       }
     },
     "work_experience": {
@@ -311,6 +359,10 @@
     "email": "Email",
     "address": "Address",
     "industry": "Industry",
+    "years_of_experience": "Years Of Experience",
+    "education_level": "Education Level",
+    "gcse_passes": "Gcse Passes",
+    "skills": "Skills",
     "work_experience": {
       "header": "Work Experience",
       "organization_name": "Organization Name",
@@ -337,6 +389,17 @@
   },
   "filter_panel": {
     "filter_header": "Filters",
-    "candidate_header": "Candidates"
+    "candidate_header": "Candidates",
+    "error_message": "Something wrong !",
+    "success_message": "Seekers fetched successfully !",
+    "search_button": "Search",
+    "clear_button": "Clear",
+    "industry": "Industry",
+    "education_level": "Education Level",
+    "no_of_gcse_passes": "No Of Gcse Passes",
+    "skills": "Skills",
+    "experience": "Years Of Experience",
+    "education_qualification": "Education Qualification",
+    "professional_qualification": "Professional Qualification"
   }
 }

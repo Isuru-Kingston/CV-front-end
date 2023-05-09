@@ -11,6 +11,7 @@
     "formik": "^2.2.9",
     "i18next": "^22.4.15",
     "i18next-browser-languagedetector": "^7.0.1",
+    "moment": "^2.29.4",
     "primeflex": "^3.3.0",
     "primeicons": "^6.0.1",
     "primereact": "^9.3.1",
@@ -21,6 +22,7 @@
     "react-router": "^6.10.0",
     "react-router-dom": "^6.10.0",
     "react-scripts": "5.0.1",
+    "redux-thunk": "^2.4.2",
     "web-vitals": "^2.1.4",
     "yup": "^1.1.1"
   },
