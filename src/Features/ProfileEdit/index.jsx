@@ -326,7 +326,8 @@ function ProfileEdit() {
   }, [loginUser]);
 
   useEffect(() => {
-    formik.setFieldValue("profileImage", profileImage.data);
+    if (profileImage.data)
+      formik.setFieldValue("profileImage", profileImage.data);
   }, [profileImage.data]);
 
   useEffect(() => {
@@ -366,9 +367,13 @@ function ProfileEdit() {
       user?.yearsOfExperience ? user?.yearsOfExperience : 0
     );
     formik.setFieldValue("skills", user?.skills ? user?.skills : []);
+    formik.setFieldValue(
+      "profileImage",
+      user?.profileImage ? user?.profileImage : null
+    );
 
     const experiences = [];
-    user?.experiences.map((experience, index) => {
+    user?.experiences.map((experience) => {
       experiences.push({
         id: experience?.id ? experience?.id : 0,
         organization: experience?.organization ? experience?.organization : "",
@@ -380,7 +385,7 @@ function ProfileEdit() {
     formik.setFieldValue("experiences", experiences);
 
     const academicQualifications = [];
-    user?.academicQualifications.map((qualification, index) => {
+    user?.academicQualifications.map((qualification) => {
       academicQualifications.push({
         id: qualification?.id ? qualification?.id : 0,
         institute: qualification?.institute ? qualification?.institute : "",
@@ -399,7 +404,7 @@ function ProfileEdit() {
     formik.setFieldValue("academicQualifications", academicQualifications);
 
     const professionalQualifications = [];
-    user?.professionalQualifications.map((qualification, index) => {
+    user?.professionalQualifications.map((qualification) => {
       professionalQualifications.push({
         id: qualification?.id ? qualification?.id : 0,
         institute: qualification?.institute ? qualification?.institute : "",
@@ -435,7 +440,7 @@ function ProfileEdit() {
     if (loginUser?.token && loginUser?.userId && loginUser?.userName) {
       const academicQualifications = [];
 
-      formik.values.academicQualifications.map((qualification, index) => {
+      formik.values.academicQualifications.map((qualification) => {
         academicQualifications.push({
           id: qualification?.id,
           institute: qualification?.institute,
@@ -448,7 +453,7 @@ function ProfileEdit() {
 
       const professionalQualifications = [];
 
-      formik.values.professionalQualifications.map((qualification, index) => {
+      formik.values.professionalQualifications.map((qualification) => {
         professionalQualifications.push({
           id: qualification?.id,
           institute: qualification?.institute,
@@ -461,7 +466,7 @@ function ProfileEdit() {
 
       const experiences = [];
 
-      formik.values.experiences.map((experience, index) => {
+      formik.values.experiences.map((experience) => {
         experiences.push({
           id: experience?.id,
           position: experience?.position,
@@ -481,6 +486,7 @@ function ProfileEdit() {
         educationLevel: formik.values?.educationLevel,
         gcsePasses: formik.values?.gcsePasses,
         yearsOfExperience: formik.values?.yearsOfExperience,
+        profileImageUrl: formik.values?.profileImage,
         skills: formik.values?.skills,
         user: {
           id: loginUser?.userId,
@@ -679,7 +685,8 @@ function ProfileEdit() {
             <FileUpload
               onChangeValue={onUploadImage}
               label={translate("profile_edit_panel.image_picker_label")}
-              maxSize={1000000}
+              errormsg={formik.errors["profileImage"]}
+              isError={formik.errors["profileImage"]}
             />
             {profileImage.status == "loading" && (
               <div className="flex flex-column w-full mt-3">
@@ -860,7 +867,7 @@ function ProfileEdit() {
         {/* --------------------------------------------------------------------------------------- */}
         {formik.values.experiences && formik.values.experiences.length > 0
           ? formik.values.experiences.map((experience, index) => (
-              <div className="grid">
+              <div key={index} className="grid">
                 <div className="col-2">
                   <TextInput
                     value={formik.values.experiences[index]?.organization || ""}
@@ -986,7 +993,7 @@ function ProfileEdit() {
         formik.values.academicQualifications.length > 0
           ? formik.values.academicQualifications.map(
               (academicQualification, index) => (
-                <div className="grid">
+                <div key={index} className="grid">
                   <div className="col-2">
                     <TextInput
                       value={
@@ -1153,7 +1160,7 @@ function ProfileEdit() {
         formik.values.professionalQualifications.length > 0
           ? formik.values.professionalQualifications.map(
               (academicQualification, index) => (
-                <div className="grid">
+                <div key={index} className="grid">
                   <div className="col-2">
                     <TextInput
                       value={

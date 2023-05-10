@@ -22,16 +22,16 @@ function Header() {
   const reject = () => {};
   const end = () => {
     return (
-      <div class="card">
-        <div class="card-container purple-container overflow-hidden">
-          <div class="flex">
-            <div class="flex-1 flex align-items-center justify-content-center p-2">
+      <div className="card">
+        <div className="card-container purple-container overflow-hidden">
+          <div className="flex">
+            <div className="flex-1 flex align-items-center justify-content-center p-2">
               <Avatar label={user?.userName.charAt(0)} shape="circle" />
             </div>
-            <div class="flex-none flex align-items-center justify-content-center p-2">
+            <div className="flex-none flex align-items-center justify-content-center p-2">
               {user?.userName}
             </div>
-            <div class="flex-1 flex align-items-center justify-content-center p-2">
+            <div className="flex-1 flex align-items-center justify-content-center p-2">
               <>
                 <Alert
                   visible={visible}

@@ -221,10 +221,7 @@ function FilterPanel() {
         {seekers.status == "loading" && <Spinner />}
         {seekers?.data.map((item, index) => (
           <div key={index} className="col-9 ">
-            <Profile
-              image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVA_HrQLjkHiJ2Ag5RGuwbFeDKRLfldnDasw&usqp=CAU"
-              data={item}
-            />
+            <Profile data={item} />
           </div>
         ))}
       </div>
