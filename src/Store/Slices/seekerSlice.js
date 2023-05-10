@@ -21,6 +21,7 @@ const initialState = {
       email: null,
       role: null,
     },
+    profileImage: null,
     headline: null,
     about: null,
     industry: null,
@@ -121,6 +122,7 @@ export const seekerSlice = createSlice({
           email: null,
           role: null,
         };
+        state.seeker.profileImage = null;
         state.seeker.headline = null;
         state.seeker.about = null;
         state.seeker.industry = null;
@@ -148,6 +150,8 @@ export const seekerSlice = createSlice({
             email: action.payload.seekerResponse?.data?.user?.email,
             role: action.payload.seekerResponse?.data?.user?.role,
           };
+          state.seeker.profileImage =
+            action.payload.seekerResponse?.data?.profileImageUrl;
           state.seeker.headline = action.payload.seekerResponse?.data?.headline;
           state.seeker.about = action.payload.seekerResponse?.data?.about;
           state.seeker.industry = action.payload.seekerResponse?.data?.industry;
@@ -192,6 +196,7 @@ export const seekerSlice = createSlice({
             email: null,
             role: null,
           };
+          state.seeker.profileImage = null;
           state.seeker.headline = null;
           state.seeker.about = null;
           state.seeker.industry = null;
@@ -223,6 +228,7 @@ export const seekerSlice = createSlice({
           email: null,
           role: null,
         };
+        state.seeker.profileImage = null;
         state.seeker.headline = null;
         state.seeker.about = null;
         state.seeker.industry = null;
@@ -337,6 +343,7 @@ export const seekerSlice = createSlice({
               yearsOfExperience: seeker?.yearsOfExperience,
               educationLevel: seeker?.educationLevel,
               gcsePasses: seeker?.gcsePasses,
+              profileImage: seeker?.profileImageUrl,
               skills: seeker?.skills.length > 0 ? seeker?.skills : [],
               experiences,
               academicQualifications,

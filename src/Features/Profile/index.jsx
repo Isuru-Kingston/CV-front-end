@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import Avatart from "../../Components/Avatar";
 import ProfileView from "../ProfileView";
 
-function Profile({ image, data }) {
+function Profile({ data }) {
   const { t: translate } = useTranslation();
 
   const [visible, setVisible] = useState(false);
@@ -13,7 +13,7 @@ function Profile({ image, data }) {
     <>
       <div className="grid shadow-4 m-1 justify-content-center align-items-center">
         <div className="col-2">
-          <Avatart image={image} size="xlarge" shape="circle" />
+          <Avatart image={data?.profileImage} size="xlarge" shape="circle" />
         </div>
         <div className="col-3">
           <div className="font-bold">{`${data?.firstName} ${data?.lastName}`}</div>

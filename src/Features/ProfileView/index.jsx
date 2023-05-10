@@ -102,7 +102,10 @@ function ProfileView({ data, ...otherProps }) {
                 {data?.skills && data?.skills.length > 0
                   ? data?.skills.map((skill, index) => {
                       return (
-                        <div className="m-2 p-2 bg-blue-100 border-round-xl">
+                        <div
+                          key={index}
+                          className="m-2 p-2 bg-blue-100 border-round-xl"
+                        >
                           {skill}
                         </div>
                       );
@@ -119,7 +122,7 @@ function ProfileView({ data, ...otherProps }) {
       </div>
       {data?.experiences && data?.experiences.length > 0
         ? data?.experiences.map((experience, index) => (
-            <div className="grid mt-2 border-round-md shadow-1">
+            <div key={index} className="grid mt-2 border-round-md shadow-1">
               <div className="col">
                 <Title
                   Title={translate(
@@ -166,7 +169,7 @@ function ProfileView({ data, ...otherProps }) {
       </div>
       {data?.academicQualifications && data?.academicQualifications.length > 0
         ? data?.academicQualifications.map((academicQualification, index) => (
-            <div className="grid mt-2 border-round-md shadow-1">
+            <div key={index} className="grid mt-2 border-round-md shadow-1">
               <div className="col">
                 <Title
                   Title={translate(
@@ -222,7 +225,7 @@ function ProfileView({ data, ...otherProps }) {
       data?.professionalQualifications.length > 0
         ? data?.professionalQualifications.map(
             (professionalQualification, index) => (
-              <div className="grid mt-2 border-round-md shadow-1">
+              <div key={index} className="grid mt-2 border-round-md shadow-1">
                 <div className="col">
                   <Title
                     Title={translate(
