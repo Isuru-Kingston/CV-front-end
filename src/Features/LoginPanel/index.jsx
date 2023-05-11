@@ -68,10 +68,10 @@ const LoginPanel = () => {
     },
   });
   return (
-    <div className="flex justify-content-around align-items-center pt-4">
+    <div className="flex justify-content-around align-items-center pt-4 ">
       <form
         onSubmit={formik.handleSubmit}
-        className="flex flex-column gap-4 w-4 p-4 border-round-lg shadow-8"
+        className="flex flex-column gap-4 w-full p-4 border-round-lg shadow-8"
       >
         <div className="text-2xl font-bold">
           {translate("login_panel.header")}

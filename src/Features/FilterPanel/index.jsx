@@ -98,7 +98,7 @@ function FilterPanel() {
 
   return (
     <div className=" m-4">
-      <div className="grid p-4">
+      <div className="grid">
         <div className="col text-2xl font-bold">
           {translate("filter_panel.filter_header")}
         </div>

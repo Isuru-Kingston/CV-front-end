@@ -103,10 +103,10 @@ const RegisterPanel = () => {
   });
 
   return (
-    <div className="flex justify-content-around pt-4 pb-4">
+    <div className="flex justify-content-around pt-4 pb-4 w-full">
       <form
         onSubmit={formik.handleSubmit}
-        className="flex flex-column gap-4 w-4 p-4 shadow-8 border-round-lg"
+        className="flex flex-column gap-4 w-full p-4 shadow-8 border-round-lg"
       >
         <div className="text-2xl font-bold">
           {translate("register_panel.header")}
