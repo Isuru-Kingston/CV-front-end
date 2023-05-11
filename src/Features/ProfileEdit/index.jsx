@@ -649,7 +649,10 @@ function ProfileEdit() {
   });
 
   return (
-    <div className="flex justify-content-center mypanel">
+    <div
+      className="flex justify-content-center mypanel"
+      data-testid="profile-edit"
+    >
       <ProfileView
         header={translate("profile_view_panel.profile_header")}
         visible={visible}

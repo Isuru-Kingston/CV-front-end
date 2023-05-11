@@ -21,7 +21,7 @@ i18n.use(initReactI18next).init({
 
 describe("AgentProfile", () => {
   test("renders AgentProfile component", () => {
-    render(
+    const { getByTestId } = render(
       <BrowserRouter>
         <Provider store={store}>
           <I18nextProvider i18n={i18n}>
@@ -30,5 +30,8 @@ describe("AgentProfile", () => {
         </Provider>
       </BrowserRouter>
     );
+    const agentProfile = getByTestId("filter-panel");
+    expect(agentProfile).toBeInTheDocument();
+    expect(agentProfile).toHaveAttribute("data-testid", "filter-panel");
   });
 });
