@@ -13,6 +13,7 @@ const PasswordInput = ({ label, errormsg, isError, value, onChangeValue }) => {
         onChange={onChangeValue}
         className={isError ? "p-invalid" : ""}
         toggleMask
+        inputClassName="w-full"
       />
 
       {isError ? <small id="password-input-help">{errormsg}</small> : null}

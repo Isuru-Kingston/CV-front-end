@@ -147,7 +147,7 @@ const RegisterPanel = () => {
           errormsg={formik.errors["lastName"]}
           isError={formik.errors["lastName"]}
         />
-        <TextInput
+        <PasswordInput
           value={formik.values.password}
           onChangeValue={(e) => {
             formik.setFieldValue("password", e.target.value);
@@ -156,7 +156,7 @@ const RegisterPanel = () => {
           errormsg={formik.errors["password"]}
           isError={formik.errors["password"]}
         />
-        <TextInput
+        <PasswordInput
           value={formik.values.ConfirmPassword}
           onChangeValue={(e) => {
             formik.setFieldValue("ConfirmPassword", e.target.value);
