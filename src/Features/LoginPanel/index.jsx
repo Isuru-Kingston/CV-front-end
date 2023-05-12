@@ -85,7 +85,7 @@ const LoginPanel = () => {
           errormsg={formik.errors["userName"]}
           isError={formik.errors["userName"]}
         />
-        <TextInput
+        <PasswordInput
           value={formik.values.password}
           onChangeValue={(e) => {
             formik.setFieldValue("password", e.target.value);
