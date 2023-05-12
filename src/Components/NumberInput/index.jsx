@@ -20,6 +20,7 @@ const NumberInput = ({
         className={isError ? "p-invalid" : ""}
         showButtons
         mode="decimal"
+        min={0}
         {...otherProps}
       />
       {isError ? <small id="number-input-help">{errormsg}</small> : null}
